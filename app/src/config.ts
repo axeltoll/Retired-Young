@@ -60,29 +60,17 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
-          onClick: () => { 
-            // Get the form fields by their IDs
-            const fullNameField = document.getElementById('full_name_from_form');
-            const jifuIdField = document.getElementById('jifu_id_from_form');
-            const emailField = document.getElementById('email_from_form');
-            const phoneNumberField = document.getElementById('phone_number_from_form');
-          
-            // Check if the fields exist and have values
-            if (fullNameField && jifuIdField && emailField && phoneNumberField) {
-              const fullName = fullNameField.nodeValue;
-              const jifuId = jifuIdField.nodeValue;
-              const email = emailField.nodeValue;
-              const phoneNumber = phoneNumberField.nodeValue;
-          
-              if (fullName && jifuId && email && phoneNumber) {
-                return true;
-              } else {
-                alert('Please fill in all the required fields.');
-                return false;
-              }
+          onClick: () => {
+            const fullNameField = document.getElementById('full_name_form_form') as HTMLInputElement;
+            const jifuIdField = document.getElementById('jifu_id_form_form') as HTMLInputElement;
+            const emailField = document.getElementById('email_form_form') as HTMLInputElement;
+            const phoneNumberField = document.getElementById('phone_number_form_form') as HTMLInputElement;
+
+            if (fullNameField.value && jifuIdField.value && emailField.value && phoneNumberField.value) {
+              return true; // Proceed to the next slide
             } else {
-              alert('Form fields are missing.');
-              return false;
+              alert('Please fill in all the required fields.');
+              return false; // Prevent moving to next slide
             }
           }
         },
