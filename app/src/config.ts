@@ -36,7 +36,7 @@ export default defineConfig({
           form: [
             {
               id: 'full_name_from_form',
-              placeholder: 'Enter your Full Name',
+              placeholder: 'Kimmy',
               type: 'text',
               required: true,
             },
