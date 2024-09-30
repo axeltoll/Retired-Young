@@ -61,10 +61,10 @@ export default defineConfig({
           ],
           button: 'Next Step',
           onClick: () => {
-            // Custom validation logic
-            const formState = inject(FORM_STATE_TOKEN, null);
-
-            if (formState?.state.value.isValid) {
+            // Assume form validity is managed by form.preset.vue
+            const formState = window.formState; // Access the form state from a global scope if available
+            
+            if (formState && formState.isValid) {
               // Proceed to the next slide if the form is valid
               return true;
             } else {

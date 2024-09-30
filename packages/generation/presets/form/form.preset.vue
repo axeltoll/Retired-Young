@@ -90,7 +90,8 @@ const onUpdate = (id: string, value: unknown) => {
   formState?.update({ [id]: value });
 
   // Validate the form whenever an input changes
-  formState?.update({ isValid: validateForm() });
+  const isValid = validateForm();
+  formState?.update({ isValid }); // Update the form's validity in the state
 };
 </script>
 
