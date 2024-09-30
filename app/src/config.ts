@@ -17,8 +17,8 @@ export default defineConfig({
           pagination: 'count',
           title: 'Welcome to the Retired Young Revolution!',
           description:
-            "Welcome to Retired Young! To get started with your Onboarding and get access to all of the tools you need, click 'Get Started' and respond to a few questions.",
-          button: 'Next',
+            "Welcome to Retired Young! To get started with your Onboarding and get access to all of the tools you need, click <b>'Get Started'</b> and respond to a few questions.",
+          button: 'Get Started',
         },
 
         // image
@@ -61,22 +61,27 @@ export default defineConfig({
           shape: 'square',
           pagination: 'count',
           title: 'Forms',
-          description: 'User fills in the form – the bot receives the data',
+          description: "Enter your personal details below. To find your Jifu ID, <a href='https://office2.jifu.com/app.html#/ProfileSetting/Account' target='_blank'>click here</a> and log in to your account and you will find it in the personal information section.",
           form: [
             {
-              id: 'text_from_form',
-              placeholder: 'Text input',
+              id: 'full_name_from_form',
+              placeholder: 'Enter your Full Name.',
               type: 'text',
             },
             {
-              id: 'number_from_form',
-              placeholder: 'Number input',
-              type: 'number',
+              id: 'jifu_id_from_form',
+              placeholder: 'Enter your Jifu ID.',
+              type: 'text',
             },
             {
-              id: 'checkbox_from_form',
-              placeholder: 'Checkbox',
-              type: 'checkbox',
+              id: 'email_from_form',
+              placeholder: 'Enter the Email you used to sign up for Jifu.',
+              type: 'text',
+            },
+            {
+              id: 'phone_number_from_form',
+              placeholder: 'Enter your Phone Number including country code.',
+              type: 'number',
             },
           ],
           button: 'Next',
