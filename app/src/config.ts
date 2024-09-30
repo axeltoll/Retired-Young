@@ -50,6 +50,7 @@ export default defineConfig({
               id: 'email_from_form',
               placeholder: 'Enter the Email you used to sign up for Jifu',
               type: 'text',
+              required: true,
             },
             {
               id: 'phone_number_from_form',
