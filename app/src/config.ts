@@ -60,22 +60,31 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
-          onClick: () => {
-            // Assume form validity is managed by form.preset.vue
-            const formState = window.formState; // Access the form state from a global scope if available
-            
-            // check if all required fields are filled
-            const allFieldsFilled = formState && formState.isValid;
-
-            if (allFieldsFilled) {
-              // Proceed to the next slide if the form is valid
-              return true;
+          onClick: () => { 
+            // Get the form fields by their IDs
+            const fullNameField = document.getElementById('full_name_from_form');
+            const jifuIdField = document.getElementById('jifu_id_from_form');
+            const emailField = document.getElementById('email_from_form');
+            const phoneNumberField = document.getElementById('phone_number_from_form');
+          
+            // Check if the fields exist and have values
+            if (fullNameField && jifuIdField && emailField && phoneNumberField) {
+              const fullName = fullNameField.nodeValue;
+              const jifuId = jifuIdField.nodeValue;
+              const email = emailField.nodeValue;
+              const phoneNumber = phoneNumberField.nodeValue;
+          
+              if (fullName && jifuId && email && phoneNumber) {
+                return true;
+              } else {
+                alert('Please fill in all the required fields.');
+                return false;
+              }
             } else {
-              // Display an error message to the user
-              alert('Please fill in all the required fields.');
+              alert('Form fields are missing.');
               return false;
             }
-          } // <-- Correctly close the onClick method
+          }
         },
 
         // list for JIFU apps
