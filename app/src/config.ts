@@ -64,7 +64,10 @@ export default defineConfig({
             // Assume form validity is managed by form.preset.vue
             const formState = window.formState; // Access the form state from a global scope if available
             
-            if (formState && formState.isValid) {
+            // check if all required fields are filled
+            const allFieldsFilled = formState && formState.isValid;
+
+            if (allFieldsFilled) {
               // Proceed to the next slide if the form is valid
               return true;
             } else {
