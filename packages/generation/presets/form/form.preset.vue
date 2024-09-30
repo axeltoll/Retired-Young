@@ -70,10 +70,27 @@ formState?.update(reactiveValue);
 
 const generatedForm = reactive<Record<string, unknown>>(reactiveValue);
 
+// Validation method to check all required fields
+const validateForm = () => {
+  // Check all controls for validity
+  const allValid = form.value.every(control => {
+    if (control.required) {
+      const value = formState?.state.value[control.id];
+      return value && value.toString().trim() !== ''; // Check if the required field is filled
+    }
+    return true; // Non-required fields are always valid
+  });
+
+  return allValid;
+};
+
 const onUpdate = (id: string, value: unknown) => {
   generatedForm[id] = value;
 
   formState?.update({ [id]: value });
+
+  // Validate the form whenever an input changes
+  formState?.update({ isValid: validateForm() });
 };
 </script>
 
