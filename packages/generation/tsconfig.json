@@ -5,8 +5,16 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["pako", "@types/node", "vite/client"]
+    "types": ["pako", "@types/node", "vite/client"],
+    "strict": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "include": ["."],
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/globals.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }
