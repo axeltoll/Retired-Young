@@ -17,37 +17,8 @@ export default defineConfig({
           pagination: 'count',
           title: 'Welcome to the Retired Young Revolution!',
           description:
-            "Welcome to Retired Young! To get started with your Onboarding and get access to all of the tools you need, click <b>'Get Started'</b> and respond to a few questions.",
+            "To get started with your Onboarding and get access to all of the tools you need, click <b>'Get Started'</b> below and respond to a few questions.",
           button: 'Get Started',
-        },
-
-        // image
-        {
-          media: {
-            type: 'image',
-            src: import('./assets/img/durov.webp'),
-          },
-          shape: 'rounded',
-          pagination: 'count',
-          title: 'Onboarding supports many types of content',
-          description:
-            "Here you can see <b>Image</b>. But it's just the beginning...",
-          button: 'Next',
-        },
-
-        // sticker
-        {
-          media: {
-            type: 'sticker',
-            src: import('./assets/stickers/duck_love.tgs'),
-            size: 250,
-          },
-          shape: 'square',
-          pagination: 'count',
-          title: 'Telegram stickers',
-          description:
-            'Just download any <b>.tgs</b> sticker from Telegram and use it in your onboardings',
-          button: 'Next',
         },
 
         // form
@@ -80,11 +51,11 @@ export default defineConfig({
             },
             {
               id: 'phone_number_from_form',
-              placeholder: 'Enter your Phone Number including country code.',
-              type: 'number',
+              placeholder: 'Enter your Phone Number + country code.',
+              type: 'text',
             },
           ],
-          button: 'Next',
+          button: 'Next Step',
         },
 
         // video
@@ -112,9 +83,9 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Lists',
+          title: 'Get connected with your educators!',
           description:
-            'Lists can be used to showcase <b>features</b> of your product. Items support customizable icons',
+            'Install both of the apps below so you dont miss out on <b>live sessions and daily trade ideas!</b>',
           list: [
             {
               media: {
@@ -122,7 +93,7 @@ export default defineConfig({
                 src: import('./assets/icons/guide.svg'),
                 size: 30,
               },
-              text: 'Some cool feature',
+              text: "<a href='https://apps.apple.com/au/app/jifu-connect/id6477942110' target='_blank'>JIFU Connect</a>",
             },
             {
               media: {
@@ -130,18 +101,10 @@ export default defineConfig({
                 src: import('./assets/icons/track.svg'),
                 size: 30,
               },
-              text: 'Some very cool feature',
-            },
-            {
-              media: {
-                type: 'icon',
-                src: import('./assets/icons/time.svg'),
-                size: 30,
-              },
-              text: 'Some extremely cool feature',
+              text: "<a href='https://apps.apple.com/us/app/jifu-member/id6477579193' target='_blank'>JIFU Member</a>",
             },
           ],
-          button: 'Next',
+          button: 'Next Step',
         },
 
         // "everything is customizable" slide
