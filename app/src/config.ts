@@ -60,6 +60,19 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
+          onClick: (formData) => {
+            // Custom validation logic
+            const requiredFields = ['full_name_from_form', 'jifu_id_from_form', 'email_from_form', 'phone_number_from_form'];
+            const isValid = requiredFields.every(field => formData[field] && formData[field].trim() !== '');
+        
+            if (isValid) {
+              // Proceed to the next slide
+              return true;
+            } else {
+              // Display an error message to the user
+              alert('Please fill in all the required fields.');
+              return false;
+            }
         },
 
         // list for JIFU apps
