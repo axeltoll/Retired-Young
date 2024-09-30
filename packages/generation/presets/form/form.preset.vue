@@ -92,6 +92,11 @@ const onUpdate = (id: string, value: unknown) => {
   // Validate the form whenever an input changes
   const isValid = validateForm();
   formState?.update({ isValid }); // Update the form's validity in the state
+
+  // Attach formState to the global window object for external access
+  if (typeof window !== 'undefined') {
+    window.formState = formState?.state.value;
+  }
 };
 </script>
 
