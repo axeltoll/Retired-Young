@@ -95,7 +95,7 @@ export default defineConfig({
           button: 'Next Step',
         },
 
-        // list for JIFU apps
+        // list for MetaTrader5
         {
           media: {
             type: 'sticker',
@@ -120,7 +120,7 @@ export default defineConfig({
           button: 'Next Step',
         },
 
-        // "everything is customizable" slide
+        // Telegram Links slide
         {
           media: {
             type: 'sticker',
@@ -140,104 +140,7 @@ export default defineConfig({
             "<a href='https://t.me/+5Xnn9O6bSvJjYTg5' target='_blank'>Killshot US30 Alert</a>",
             "<a href='https://t.me/+vZa4_8PyWSs0MWE5' target='_blank'>Killshot NAS Alert</a>",
           ],
-          button: 'Super-Duper Next',
-        },
-
-        // slide with other features
-        {
-          media: {
-            type: 'sticker',
-            src: import('./assets/stickers/duck_cool.tgs'),
-            size: 150,
-          },
-          shape: 'square',
-          pagination: 'count',
-          title: 'Some other features:',
-          description: '',
-          list: [
-            'One-click 0$ <b>deploy</b> on GitHub Pages',
-            'Language and currency localization',
-            'Buttons with <b>haptic</b> feedback',
-            'Content pre-loading for high speed',
-            '<b>Low-code</b> approach to building onboardings',
-            'Many examples/presets',
-            "And many more... (see <a href='https://github.com/Easterok/telegram-onboarding-kit' target='_blank'>GitHub</a>)",
-          ],
-          button: 'Next',
-        },
-
-        // go to paywall slide
-        {
-          media: {
-            type: 'sticker',
-            src: import('./assets/stickers/duck_knife.tgs'),
-            size: 250,
-          },
-          shape: 'square',
-          pagination: 'count',
-          textAlign: 'center',
-          title: 'But onboarding slides are not enough...',
-          description: "Let's go to Paywall",
-          button: {
-            content: 'Go to Paywall',
-            to: '/paywall',
-          },
-        },
-      ],
-    },
-
-    // paywall
-    {
-      extends: 'paywall',
-      path: '/paywall',
-      media: {
-        type: 'sticker',
-        src: import('./assets/stickers/duck_money.tgs'),
-        size: 150,
-      },
-      shape: 'square',
-      title: 'Your beautiful Paywall',
-      list: [
-        'Adjustable product cards',
-        '<b>👛 Wallet Pay</b> and <b>Telegram Payments</b> ready. Add custom methods easily',
-        'Subscriptions or One-time payments',
-      ],
-      products: [
-        {
-          id: '1_month_subscription',
-          title: '1 month subscription',
-          description: '2$/month',
-          discount: '',
-          price: 2,
-        },
-        {
-          id: '1_year_subscription',
-          title: '1 year subscription',
-          description: '1$/month',
-          discount: 'Discount 50%',
-          price: 12,
-        },
-        {
-          id: 'lifetime_access',
-          title: 'Lifetime access',
-          description: '20$ once',
-          discount: 'Best offer',
-          price: 20,
-        },
-      ],
-      mainButtonText: 'Buy for {price}',
-      popup: {
-        // popup for payment methods choice
-        type: 'web',
-      },
-      links: [
-        {
-          text: 'Privacy policy',
-          href: 'https://google.com',
-        },
-        {
-          text: 'Terms of use',
-          href: 'https://google.com',
+          button: 'Complete my onboarding!',
         },
       ],
     },
