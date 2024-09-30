@@ -60,7 +60,7 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
-          onClick: (formData: { [key: string]: string }) => {
+          onClick: () => {
             // Custom validation logic
             const formState = inject(FORM_STATE_TOKEN, null);
 
