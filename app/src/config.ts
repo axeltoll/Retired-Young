@@ -141,6 +141,7 @@ export default defineConfig({
             "<a href='https://t.me/+vZa4_8PyWSs0MWE5' target='_blank'>Killshot NAS Alert</a>",
           ],
           button: 'Complete my onboarding!',
+          action: 'close',
         },
       ],
     },
