@@ -30,6 +30,9 @@
 </template>
 
 <script setup lang="ts">
+// Explicitly reference the globals.d.ts to include custom window properties
+/// <reference path="app/src/globals.d.ts" />
+
 import type { _GenerationFormControlConfig } from '@tok/generation/defineConfig';
 import { SlidePreset } from '@tok/generation/presets/slide';
 import { FORM_STATE_TOKEN } from '@tok/generation/tokens';
@@ -100,7 +103,7 @@ const onUpdate = (id: string, value: unknown) => {
 
   // Attach formState to the global window object for external access
   if (typeof window !== 'undefined') {
-    window.formState = formState?.state.value;
+    window.formState = formState?.state.value || null;
   }
 };
 </script>
