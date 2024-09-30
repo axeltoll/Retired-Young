@@ -15,9 +15,9 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Welcome to Telegram Onboarding Kit',
+          title: 'Welcome to the Retired Young Revolution!',
           description:
-            "Create stunning onboarding and paywall for your Telegram Bot using the full power of Mini Apps<br><br>It's <b>simple</b>, <b>fast</b>, highly <b>customizable</b> and <a href='https://github.com/Easterok/telegram-onboarding-kit' target='_blank'>open-source</a>!",
+            "Welcome to Retired Young! To get started with your Onboarding and get access to all of the tools you need, click 'Get Started' and respond to a few questions.",
           button: 'Next',
         },
 
