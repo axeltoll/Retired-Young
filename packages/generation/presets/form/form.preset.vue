@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 // Explicitly reference the globals.d.ts to include custom window properties
-/// <reference path="app/src/globals.d.ts" />
+/// <reference path="app/src/globalsd.ts" />
 
 import type { _GenerationFormControlConfig } from '@tok/generation/defineConfig';
 import { SlidePreset } from '@tok/generation/presets/slide';
