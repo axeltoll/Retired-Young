@@ -60,7 +60,7 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
-          onClick: (formData) => {
+          onClick: (formData: { [key: string]: string }) => {
             // Custom validation logic
             const requiredFields = ['full_name_from_form', 'jifu_id_from_form', 'email_from_form', 'phone_number_from_form'];
             const isValid = requiredFields.every(field => formData[field] && formData[field].trim() !== '');
