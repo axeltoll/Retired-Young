@@ -62,11 +62,10 @@ export default defineConfig({
           button: 'Next Step',
           onClick: (formData: { [key: string]: string }) => {
             // Custom validation logic
-            const requiredFields = ['full_name_from_form', 'jifu_id_from_form', 'email_from_form', 'phone_number_from_form'];
-            const isValid = requiredFields.every(field => formData[field] && formData[field].trim() !== '');
-        
-            if (isValid) {
-              // Proceed to the next slide
+            const formState = inject(FORM_STATE_TOKEN, null);
+
+            if (formState?.state.value.isValid) {
+              // Proceed to the next slide if the form is valid
               return true;
             } else {
               // Display an error message to the user
