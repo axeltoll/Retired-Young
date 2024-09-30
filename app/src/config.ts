@@ -21,7 +21,7 @@ export default defineConfig({
           button: 'Get Started',
         },
 
-        // form
+        // form for personal details
         {
           extends: 'form', // note, it's important to extend from 'form' here
           media: {
@@ -38,11 +38,13 @@ export default defineConfig({
               id: 'full_name_from_form',
               placeholder: 'Enter your Full Name',
               type: 'text',
+              required: true,
             },
             {
               id: 'jifu_id_from_form',
               placeholder: 'Enter your Jifu ID',
               type: 'text',
+              required: true,
             },
             {
               id: 'email_from_form',
@@ -53,6 +55,7 @@ export default defineConfig({
               id: 'phone_number_from_form',
               placeholder: 'Enter your Phone Number + country code',
               type: 'text',
+              required: true,
             },
           ],
           button: 'Next Step',
