@@ -39,6 +39,11 @@ import { inject, reactive, toRefs } from 'vue';
 
 import { FormPresetDefaultProps, FormPresetProps } from './form.preset.props';
 
+// Extend _GenerationFormControlConfig to include the 'required' property
+interface ExtendedFormControlConfig extends _GenerationFormControlConfig {
+  required?: boolean;
+}
+
 const props = withDefaults(
   defineProps<FormPresetProps>(),
   FormPresetDefaultProps
@@ -50,7 +55,7 @@ const formState = inject(FORM_STATE_TOKEN, null);
 
 const stateValue = formState?.state;
 
-const getInitValue = (control: _GenerationFormControlConfig) => {
+const getInitValue = (control: ExtendedFormControlConfig) => {
   if (control.type === 'checkbox') {
     return stateValue?.value[control.id] ?? false;
   }
@@ -58,7 +63,7 @@ const getInitValue = (control: _GenerationFormControlConfig) => {
   return stateValue?.value[control.id] ?? null;
 };
 
-const reactiveValue = form.value.reduce((acc, control) => {
+const reactiveValue = form.value.reduce((acc, control: ExtendedFormControlConfig) => {
   const initValue = getInitValue(control);
 
   acc[control.id] = initValue;
@@ -73,7 +78,7 @@ const generatedForm = reactive<Record<string, unknown>>(reactiveValue);
 // Validation method to check all required fields
 const validateForm = () => {
   // Check all controls for validity
-  const allValid = form.value.every(control => {
+  const allValid = form.value.every((control: ExtendedFormControlConfig) => {
     if (control.required) {
       const value = formState?.state.value[control.id];
       return value && value.toString().trim() !== ''; // Check if the required field is filled
