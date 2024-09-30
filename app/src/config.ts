@@ -73,6 +73,7 @@ export default defineConfig({
               alert('Please fill in all the required fields.');
               return false;
             }
+          } // <-- Correctly close the onClick method
         },
 
         // list for JIFU apps
