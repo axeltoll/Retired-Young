@@ -31,50 +31,34 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Forms',
+          title: 'Personal details',
           description: "Enter your personal details below. To find your Jifu ID, <a href='https://office2.jifu.com/app.html#/ProfileSetting/Account' target='_blank'>click here</a> and log in to your account and you will find it in the personal information section.",
           form: [
             {
               id: 'full_name_from_form',
-              placeholder: 'Enter your Full Name.',
+              placeholder: 'Enter your Full Name',
               type: 'text',
             },
             {
               id: 'jifu_id_from_form',
-              placeholder: 'Enter your Jifu ID.',
+              placeholder: 'Enter your Jifu ID',
               type: 'text',
             },
             {
               id: 'email_from_form',
-              placeholder: 'Enter the Email you used to sign up for Jifu.',
+              placeholder: 'Enter the Email you used to sign up for Jifu',
               type: 'text',
             },
             {
               id: 'phone_number_from_form',
-              placeholder: 'Enter your Phone Number + country code.',
+              placeholder: 'Enter your Phone Number + country code',
               type: 'text',
             },
           ],
           button: 'Next Step',
         },
 
-        // video
-        {
-          media: {
-            type: 'video',
-            src: import('./assets/videos/spongebob.mp4'),
-            poster: import('./assets/img/spongebob_poster.webp'),
-            style: 'aspect-ratio: 400/287', // here we manually set video aspect-ratio (default is 16:9)
-          },
-          shape: 'rounded',
-          pagination: 'count',
-          title: 'Videos',
-          description:
-            "Typically, video starts <b>automatically</b><br><br>However, on iOS, it will only autoplay upon any prior tap on the page ('Next' button doesn't count). If video doesn't autoplay, user will see preview and pretty animation, inviting them to tap to play the video",
-          button: 'Next',
-        },
-
-        // list
+        // list for JIFU apps
         {
           media: {
             type: 'sticker',
@@ -102,6 +86,31 @@ export default defineConfig({
                 size: 30,
               },
               text: "<a href='https://apps.apple.com/us/app/jifu-member/id6477579193' target='_blank'>JIFU Member</a>",
+            },
+          ],
+          button: 'Next Step',
+        },
+
+        // list for JIFU apps
+        {
+          media: {
+            type: 'sticker',
+            src: import('./assets/stickers/duck_juggling.tgs'),
+            size: 150,
+          },
+          shape: 'square',
+          pagination: 'count',
+          title: 'Get MetaTrader5!',
+          description:
+            'Download the most used trading app where you can trade with demo money.',
+          list: [
+            {
+              media: {
+                type: 'icon',
+                src: import('./assets/icons/guide.svg'),
+                size: 30,
+              },
+              text: "<a href='https://apps.apple.com/us/app/metatrader-5/id413251709' target='_blank'>MetaTrader5</a>",
             },
           ],
           button: 'Next Step',
