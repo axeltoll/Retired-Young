@@ -67,34 +67,14 @@ export default defineConfig({
             const jifuIdField = document.getElementById('jifu_id_from_form') as HTMLInputElement;
             const emailField = document.getElementById('email_from_form') as HTMLInputElement;
             const phoneNumberField = document.getElementById('phone_number_from_form') as HTMLInputElement;
-
-            // Check if all fields are filled
-            if (fullNameField.value && jifuIdField.value && emailField.value && phoneNumberField.value) {
+          
+            // Check if any field has text
+            if (fullNameField.value.trim() || jifuIdField.value.trim() || emailField.value.trim() || phoneNumberField.value.trim()) {
               return true; // Proceed to the next slide
             } else {
-              alert('Please fill in all the required fields.');
+              alert('Please fill in all fields.');
               return false; // Prevent moving to the next slide
             }
-          },
-          onMount: () => {
-            const nextButton = document.querySelector('button[aria-label="Next Step"]') as HTMLButtonElement;
-            const formFields = [
-              document.getElementById('full_name_from_form') as HTMLInputElement,
-              document.getElementById('jifu_id_from_form') as HTMLInputElement,
-              document.getElementById('email_from_form') as HTMLInputElement,
-              document.getElementById('phone_number_from_form') as HTMLInputElement,
-            ];
-
-            const validateForm = () => {
-              const allFieldsFilled = formFields.every(field => field.value.trim() !== '');
-              nextButton.disabled = !allFieldsFilled;
-            };
-
-            formFields.forEach(field => {
-              field.addEventListener('input', validateForm);
-            });
-
-            validateForm(); // Initial validation
           }
         },
 
