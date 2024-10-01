@@ -12,6 +12,7 @@ export default defineConfig({
             type: 'image',
             src: import('./assets/img/RY.jpg'),
             size: 250,
+
           },
           shape: 'square',
           pagination: 'count',
@@ -61,16 +62,18 @@ export default defineConfig({
           ],
           button: 'Next Step',
           onClick: () => {
-            const fullNameField = document.getElementById('full_name_form_form') as HTMLInputElement;
-            const jifuIdField = document.getElementById('jifu_id_form_form') as HTMLInputElement;
-            const emailField = document.getElementById('email_form_form') as HTMLInputElement;
-            const phoneNumberField = document.getElementById('phone_number_form_form') as HTMLInputElement;
+            // Access the form fields
+            const fullNameField = document.getElementById('full_name_from_form') as HTMLInputElement;
+            const jifuIdField = document.getElementById('jifu_id_from_form') as HTMLInputElement;
+            const emailField = document.getElementById('email_from_form') as HTMLInputElement;
+            const phoneNumberField = document.getElementById('phone_number_from_form') as HTMLInputElement;
 
+            // Check if all fields are filled
             if (fullNameField.value && jifuIdField.value && emailField.value && phoneNumberField.value) {
               return true; // Proceed to the next slide
             } else {
               alert('Please fill in all the required fields.');
-              return false; // Prevent moving to next slide
+              return false; // Prevent moving to the next slide
             }
           },
           onMount: () => {
