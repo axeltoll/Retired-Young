@@ -69,8 +69,8 @@ export default defineConfig({
             const phoneNumberField = document.getElementById('phone_number_from_form') as HTMLInputElement;
           
             // Check if any field has text
-            if (fullNameField.value.trim() || jifuIdField.value.trim() || emailField.value.trim() || phoneNumberField.value.trim()) {
-              return true; // Proceed to the next slide
+            if (fullNameField.value.trim() && jifuIdField.value.trim() && emailField.value.trim() && phoneNumberField.value.trim()) {
+              return false; // Proceed to the next slide
             } else {
               alert('Please fill in all fields.');
               return false; // Prevent moving to the next slide
