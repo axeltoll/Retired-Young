@@ -61,21 +61,6 @@ export default defineConfig({
             },
           ],
           button: 'Next Step',
-          onClick: () => {
-            // Access the form fields
-            const fullNameField = document.getElementById('full_name_from_form') as HTMLInputElement;
-            const jifuIdField = document.getElementById('jifu_id_from_form') as HTMLInputElement;
-            const emailField = document.getElementById('email_from_form') as HTMLInputElement;
-            const phoneNumberField = document.getElementById('phone_number_from_form') as HTMLInputElement;
-          
-            // Check if any field has text
-            if (fullNameField.value.trim() && jifuIdField.value.trim() && emailField.value.trim() && phoneNumberField.value.trim()) {
-              return false; // Proceed to the next slide
-            } else {
-              alert('Please fill in all fields.');
-              return false; // Prevent moving to the next slide
-            }
-          }
         },
 
         // list for JIFU apps
@@ -155,6 +140,29 @@ export default defineConfig({
             "<a href='https://t.me/+7foUKc8geeRhN2Ux' target='_blank'>Killshot Gold Alerts</a>",
             "<a href='https://t.me/+5Xnn9O6bSvJjYTg5' target='_blank'>Killshot US30 Alert</a>",
             "<a href='https://t.me/+vZa4_8PyWSs0MWE5' target='_blank'>Killshot NAS Alert</a>",
+          ],
+          button: 'Next Step',
+        },
+
+        // Start up videos
+        {
+          media: {
+            type: 'sticker',
+            src: import('./assets/stickers/duck_xray.tgs'),
+            size: 250,
+          },
+          shape: 'square',
+          pagination: 'count',
+          title: "Start Your Jurney!",
+          description: '',
+          textAlign: 'center',
+          list: [
+            "<a href='https://jifulive.com/university/1' target='_blank'>LEARN HOW TO EARN IN AFFILIATE</a>",
+            "<a href='https://jifulive.com/university/3' target='_blank'>FOREX UNIVERSITY</a>",
+            "<a href='https://jifulive.com/university/2' target='_blank'>CRYPTO UNIVERSITY</a>",
+            "<a href='https://jifulive.com/university/1' target='_blank'>E-COMMERCE UNIVERSITY</a>",
+            "<a href='https://jifulive.com/university/8' target='_blank'>SOCIAL MEDIA UNIVERSITY</a>",
+            "<a href='https://jifulive.com/university/6' target='_blank'>CREDIT UNIVERSITY</a>",
           ],
           button: 'Your Onboarding is now complete!',
           onClick: 'close',
