@@ -9,8 +9,8 @@ export default defineConfig({
         // intro
         {
           media: {
-            type: 'sticker',
-            src: import('./assets/stickers/duck_hello.tgs'),
+            type: 'image',
+            src: import('./assets/img/RY.jpg'),
             size: 250,
           },
           shape: 'square',
@@ -36,7 +36,7 @@ export default defineConfig({
           form: [
             {
               id: 'full_name_from_form',
-              placeholder: 'Kimmy',
+              placeholder: 'Enter your Full Name',
               type: 'text',
               required: true,
             },
@@ -72,6 +72,26 @@ export default defineConfig({
               alert('Please fill in all the required fields.');
               return false; // Prevent moving to next slide
             }
+          },
+          onMount: () => {
+            const nextButton = document.querySelector('button[aria-label="Next Step"]') as HTMLButtonElement;
+            const formFields = [
+              document.getElementById('full_name_from_form') as HTMLInputElement,
+              document.getElementById('jifu_id_from_form') as HTMLInputElement,
+              document.getElementById('email_from_form') as HTMLInputElement,
+              document.getElementById('phone_number_from_form') as HTMLInputElement,
+            ];
+
+            const validateForm = () => {
+              const allFieldsFilled = formFields.every(field => field.value.trim() !== '');
+              nextButton.disabled = !allFieldsFilled;
+            };
+
+            formFields.forEach(field => {
+              field.addEventListener('input', validateForm);
+            });
+
+            validateForm(); // Initial validation
           }
         },
 
